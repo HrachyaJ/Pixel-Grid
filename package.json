@@ -1,18 +1,16 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^5.1.0"
-  },
-  "name": "pixel-app",
+  "name": "pixel-grid-drawing",
   "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
+  "description": "Collaborative pixel drawing application",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
 }

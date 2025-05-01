@@ -1,4 +1,5 @@
-const API_URL = 'https://pixel-grid-beige.vercel.app/api';
+// Change API_URL to point to your local server
+const API_URL = 'http://localhost:3000/api';
 let selectedColor = '#000000';
 let isMouseDown = false;
 

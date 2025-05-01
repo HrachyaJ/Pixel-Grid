@@ -1,11 +1,15 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static files from the current directory
+app.use(express.static(path.join(__dirname)));
 
 // Initialize grid (20x20 grid with white pixels)
 const DEFAULT_COLOR = '#ffffff';
@@ -44,17 +48,12 @@ app.post('/api/pixel', (req, res) => {
     res.json({ grid, updated: { row, col, color } });
 });
 
-const corsOptions = {
-  origin: [
-    'https://pixel-grid-beige.vercel.app/', // Your Vercel frontend URL
-    'http://localhost:3000'             // For local testing
-  ],
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
+// Serve the main HTML file for the root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`Pixel Grid server running on http://localhost:${PORT}`);
+    console.log(`Pixel Grid server running on port ${PORT}`);
 });

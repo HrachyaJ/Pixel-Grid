@@ -1,20 +1,4 @@
-# Node.js dependencies
-node_modules/
-
-# Environment variables
-.env
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-
-# Operating System files
+node_modules
+npm-debug.log
 .DS_Store
-Thumbs.db
-
-# IDE files
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
+.env
